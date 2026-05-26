@@ -15,7 +15,7 @@ public class Book {
 
 
     // TODO: Implementar constructor según el ejercicio 1
-    public Book( String titulo, String autor, String isbn) {
+    public Book( String titulo, String autor, String isbn)  {
         this.titulo = titulo;
         this.autor = autor;
         this.isbn = isbn;
@@ -25,7 +25,7 @@ public class Book {
     // TODO: Implementar getters y setters según el ejercicio 1
     public String getTitulo () {return titulo;}
     public void setTitulo(String titulo) {this.titulo = titulo; }
-    public String getAutor() {return autor; }
+    public String getAutor()  {return autor; }
     public void setAutor(String autor) {this.autor = autor; }
     public String getIsbn() {return isbn; }
     public void setIsbn(String isbn) {this.isbn = isbn; }
