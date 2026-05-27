@@ -23,7 +23,8 @@ public class Library {
 
     private void loadSampleData() {
         users.addAll(SampleData.SAMPLE_USERS);
-        // books.addAll(SampleData.SAMPLE_BOOKS); // descomenta cuando implementes Book (ejercicio 1)
+        books.addAll(SampleData.SAMPLE_BOOKS);
+
         System.out.println("Datos de ejemplo cargados: " + users.size() + " usuarios, " + books.size() + " libros.");
     }
 
@@ -41,6 +42,7 @@ public class Library {
     }
 
     public void addBook(Book book) {
+        books.add(book);
         // TODO: Ejercicio 3 - añadir el libro a la lista 'books'
     }
 
