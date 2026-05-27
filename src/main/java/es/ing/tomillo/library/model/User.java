@@ -14,6 +14,7 @@ public class User {
     private String name;
     private int id;
     private final List<Book> borrowedBooks;
+    private final List<Book> reservedBooks = new ArrayList<>();
     private static final int MAX_BORROWED_BOOKS = 5;
 
     // Constructor con un maximo de 5 libros prestados
@@ -43,6 +44,9 @@ public class User {
         return borrowedBooks;
     }
 
+    public List<Book> getReservedBooks() {
+        return reservedBooks;
+    }
     public int getBookCount() {
         return borrowedBooks.size();
     }
@@ -72,12 +76,9 @@ public class User {
 
     // TODO: Implementar método reservarLibro según el ejercicio 2
     // Debe permitir reservar libros que no están disponibles
-    public void reserveBook(Book book) {
-        if (!book.isAvailable()) {
-            System.out.println("El libro ya está reservado.");
-        } else {
-            System.out.println("El libro está disponible para préstamo.");
-        }
+    public void      reserveBook     (   Book book) {
+        if (!book.isAvailable())
+            reservedBooks.add(book);
     }
 
     // TODO: Implementar método toString para mostrar la información del usuario
