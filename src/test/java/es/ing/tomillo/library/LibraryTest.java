@@ -143,6 +143,44 @@ public class LibraryTest {
     }
 
     // -------------------------------------------------------------------------
+    //  Ejercicio 4
+    // ----------------------------------------------------------------------
+
+
+     @Test
+            void       returnBookNotBorrowedByUser  ()   {
+
+
+         user.returnBook (book1)   ;
+
+                 assertTrue(book1.isAvailable ()) ;
+      }
+
+          @Test
+    void   userCannotBorrowSameBookTwice()    {
+
+         user.borrowBook    (book1)  ;
+
+
+               assertThrows (BookNotAvailableException.class,  ()     ->    user.borrowBook(book1)  ,
+                "No se puede pedir prestado el mismo libro dos veces seguidas");
+    }
+
+    @Test
+
+           void getAvailableBooksWhenAllBorrowed() {
+
+
+                 library.borrowBook(user, book1);
+
+                    User user2  = new User ("Bob", 100)  ;
+
+                    library.addUser(user2);
+        library.borrowBook(user2, book2);
+
+        assertEquals(0, library.getAvailableBooks().size());
+    }
+    // -------------------------------------------------------------------------
     // Ejercicio 5 — búsqueda por título y autor
     // -------------------------------------------------------------------------
 
