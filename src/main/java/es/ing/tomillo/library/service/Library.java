@@ -65,10 +65,10 @@ public class Library {
     }
 
     // TODO: Ejercicio 5 - recorrer 'books' y devolver el libro cuyo título coincida (ignora mayúsculas)
-   public Book searchBookByTitle(String title) {return null;}
+
     public Book searchBookByTitle(String title) {
         for (Book book : books) {
-if (book.getTitle().equals(title)) {
+if (book.getTitle().equalsIgnoreCase(title)) {
     return book;
             }
         }
@@ -76,7 +76,7 @@ if (book.getTitle().equals(title)) {
     }
     public Book searchBookByAuthor(String author) {
         for (Book book : books) {
-            if (book.getAuthor().equals(author)) {
+            if (book.getAuthor().equalsIgnoreCase(author)) {
                 return book;
 
             }
@@ -85,9 +85,7 @@ if (book.getTitle().equals(title)) {
     }
     //Este comando es para buscar un libro por su portada.
     // TODO: Ejercicio 5 - recorrer 'books' y devolver el libro cuyo autor coincida (ignora mayúsculas)
-    public Book searchBookByAuthor(String author) {
-        return null;
-    }
+
 
     // TODO: Implementar método listarLibrosDisponibles según el ejercicio 5
     // Debe mostrar por pantalla todos los libros que están disponibles (isAvailable = true)
