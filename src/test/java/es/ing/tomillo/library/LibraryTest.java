@@ -181,6 +181,7 @@ public class LibraryTest {
         assertEquals(0, library.getAvailableBooks().size());
     }
     // -------------------------------------------------------------------------
+
     // Ejercicio 5 — búsqueda por título y autor
     // -------------------------------------------------------------------------
 
