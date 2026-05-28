@@ -23,7 +23,7 @@ public class Library {
 
     private void loadSampleData() {
         users.addAll(SampleData.SAMPLE_USERS);
-        books.addAll(SampleData.SAMPLE_BOOKS);
+        // books.addAll(SampleData.SAMPLE_BOOKS);
 
         System.out.println("Datos de ejemplo cargados: " + users.size() + " usuarios, " + books.size() + " libros.");
     }
@@ -109,12 +109,17 @@ if (book.getTitle().equalsIgnoreCase(title)) {
 
     // TODO: Ejercicio 8 — usando stream().filter() devuelve la lista de libros disponibles
     public List<Book> getAvailableBooks() {
-        return new ArrayList<>();
+        return books.stream()
+                .filter(b -> b.isAvailable())
+                .toList();
     }
+
 
     // TODO: Ejercicio 8 — usando stream().filter() devuelve todos los libros del autor dado (ignora mayúsculas)
     public List<Book> searchAllBooksByAuthor(String author) {
-        return new ArrayList<>();
+        return books.stream()
+                .filter(b -> b.getAuthor().equalsIgnoreCase(author))
+                .toList();
     }
 
 }
