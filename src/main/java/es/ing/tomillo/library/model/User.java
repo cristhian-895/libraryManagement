@@ -69,6 +69,8 @@ public class User {
     public void returnBook(Book book) {
         if (borrowedBooks.remove(book)) {
             book.setAvailable(true);
+            if (reservedBooks.contains(book))
+           System.out.println("Aviso de libro'" + book.getTitle()+ "' tiene reservas pendientes.");
         } else {
             System.out.println("Este libro no estaba prestado a este usuario.");
         }
